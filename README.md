@@ -53,3 +53,13 @@ DLog::notice("this is notice app2");
 DLog::setLogger('app1');
 DLog::notice("this is notice back to app1, still with newkey :)");
 ```
+output
+```
+TRACE: 15-06-07 16:22:37 app1 * 68337 [logid=3507556553 filename=/Users/work/git/DLog/examples/error_log.php lineno=21 uri= errno=0 ] this is trace
+NOTICE: 15-06-07 16:22:37 app1 * 68337 [logid=3507556553 filename=/Users/work/git/DLog/examples/error_log.php lineno=22 uri= errno=0 ] this is notice
+WARNING: 15-06-07 16:22:37 app1 * 68337 [logid=3507556553 filename=/Users/work/git/DLog/examples/error_log.php lineno=23 uri= errno=404 ] this is warning
+FATAL: 15-06-07 16:22:37 app1 * 68337 [logid=3507556553 filename=/Users/work/git/DLog/examples/error_log.php lineno=24 uri= errno=500 key1=value1 key2=value2] this is fatal
+NOTICE: 15-06-07 16:22:37 app1 * 68337 [logid=3507556553 filename=/Users/work/git/DLog/examples/error_log.php lineno=28 uri= errno=0 newkey=xxx] this is notice app1, with newkey
+NOTICE: 15-06-07 16:22:37 app2 * 68337 [logid=3507556553 filename=/Users/work/git/DLog/examples/error_log.php lineno=31 uri= errno=0 ] this is notice app2
+NOTICE: 15-06-07 16:22:37 app1 * 68337 [logid=3507556553 filename=/Users/work/git/DLog/examples/error_log.php lineno=34 uri= errno=0 newkey=xxx] this is notice back to app1, still with newkey :)
+```
